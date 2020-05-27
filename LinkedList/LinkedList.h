@@ -20,6 +20,9 @@ public:
 	void addFront(T data);
 	void addBack(T data);
 
+	T popFront(void);
+	T popBack(void);
+
 	int getSize(void);
 
 	void printList(void);
@@ -29,7 +32,7 @@ template <class T>
 LinkedList<T>::LinkedList() {
 	this->_head = nullptr;
 	this->_tail = nullptr;
-	this->size = 0;
+	this->_size = 0;
 }
 
 template <class T>
@@ -72,6 +75,44 @@ void LinkedList<T>::addBack(T data) {
 	}
 
 	this->_size++;
+}
+
+template <class T>
+T LinkedList<T>::popFront(void) {
+
+	if (_head != nullptr) {
+
+		T data = _head->data;
+
+		Node<T>* oldHead = _head;
+		_head = _head->next;
+		delete oldHead;
+
+		this->_size--;
+
+		return data;
+	}
+
+	throw std::logic_error("Cannot pop value from empty list");
+}
+
+template <class T>
+T LinkedList<T>::popBack(void) {
+
+	if (_tail != nullptr) {
+
+		T data = _tail->data;
+
+		Node<T>* oldTail = _tail;
+		_tail = _tail->prev;
+		delete oldTail;
+
+		this->_size--;
+
+		return data;
+	}
+
+	throw std::logic_error("Cannot pop value from empty list");
 }
 
 template <class T>
