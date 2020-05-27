@@ -11,14 +11,16 @@ private:
 	Node<T>* _head;
 	Node<T>* _tail;
 
-public:
+	int _size;
 
-	int size;
+public:
 
 	LinkedList();
 
 	void addFront(T data);
 	void addBack(T data);
+
+	int getSize(void);
 
 	void printList(void);
 };
@@ -48,7 +50,7 @@ void LinkedList<T>::addFront(T data) {
 		_head = newNode;
 	}
 
-	this->size++;
+	this->_size++;
 }
 
 template <class T>
@@ -69,7 +71,13 @@ void LinkedList<T>::addBack(T data) {
 		_tail = newNode;
 	}
 
-	this->size++;
+	this->_size++;
+}
+
+template <class T>
+int LinkedList<T>::getSize(void) {
+
+	return this->_size;
 }
 
 template <class T>
