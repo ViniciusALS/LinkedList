@@ -1,3 +1,0 @@
-/home/vinicius/Documents/programming/LinkedList/build/CMakeFiles/rebuild_cache.dir
-/home/vinicius/Documents/programming/LinkedList/build/CMakeFiles/edit_cache.dir
-/home/vinicius/Documents/programming/LinkedList/build/CMakeFiles/binary.dir
