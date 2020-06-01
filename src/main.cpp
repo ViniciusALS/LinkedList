@@ -22,64 +22,15 @@ int main(void) {
 	myList.printList();
 	cout << endl;
 
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
+	int* list = myList.getList();
+	int size = myList.getSize();
 
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
+	for (int i = 0; i < size; i++) {
 
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	cout << "poped val: " << myList.popFront();
-	cout << " size: " << myList.getSize() << " list:";
-	myList.printList();
-	cout << endl;
-
-	try {
-
-		cout << "poped val: " << myList.popFront();
-		cout << " size: " << myList.getSize() << " list:";
-		myList.printList();
-		cout << endl;
+		cout << list[i] << " ";
 	}
 
-	catch (const std::logic_error& e) {
-		
-		cout << "Sorry kiddo :(" << endl;
-	}
-
+	cout << endl;
 
 	return 0;
 }
