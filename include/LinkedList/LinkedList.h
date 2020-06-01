@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Node.h"
+#include "LinkedList/Node.h"
 #include <iostream>
 
 template <class T>
