@@ -121,14 +121,17 @@ int LinkedList<Type>::getSize(void) {
 	return this->_size;
 }
 
-template <class T>
-void LinkedList<T>::printList(void) {
+template <class Type>
+Type* LinkedList<Type>::getList(void) {
 
-	if (_head != nullptr) {
+	Type* list = new Type[this->_size];
+	Node<Type>* cur = this->_head;
 
-		for (Node<T>* cur = _head; cur != nullptr; cur = cur->next) {
+	for (int i = 0; i < this->_size; i++){
 
-			std::cout << cur->data << " ";
-		}
+		list[i] = cur->data;
+		cur = cur->next;
 	}
+
+	return list;
 }
