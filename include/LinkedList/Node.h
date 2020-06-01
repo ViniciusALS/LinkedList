@@ -1,14 +1,14 @@
 #pragma once
 
-template <class T>
+template <class Type>
 class Node {
 public:
 
-	T data;
-	Node<T>* next;
-	Node<T>* prev;
+	Type data;
+	Node<Type>* next;
+	Node<Type>* prev;
 
-	Node(T data) {
+	Node(const Type& data) {
 		this->data = data;
 		this->next = nullptr;
 		this->prev = nullptr;

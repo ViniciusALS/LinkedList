@@ -3,13 +3,13 @@
 #include "LinkedList/Node.h"
 #include <iostream>
 
-template <class T>
+template <class Type>
 class LinkedList {
 
 private:
 
-	Node<T>* _head;
-	Node<T>* _tail;
+	Node<Type>* _head;
+	Node<Type>* _tail;
 
 	int _size;
 
@@ -17,28 +17,28 @@ public:
 
 	LinkedList();
 
-	void addFront(T data);
-	void addBack(T data);
+	void addFront(const Type& data);
+	void addBack(const Type& data);
 
-	T popFront(void);
-	T popBack(void);
+	Type popFront(void);
+	Type popBack(void);
 
 	int getSize(void);
 
-	void printList(void);
+	Type* getList(void); 
 };
 
-template <class T>
-LinkedList<T>::LinkedList() {
+template <class Type>
+LinkedList<Type>::LinkedList() {
 	this->_head = nullptr;
 	this->_tail = nullptr;
 	this->_size = 0;
 }
 
-template <class T>
-void LinkedList<T>::addFront(T data) {
+template <class Type>
+void LinkedList<Type>::addFront(const Type& data) {
 	
-	Node<T>* newNode = new Node<T>(data);
+	Node<Type>* newNode = new Node<Type>(data);
 
 	if (_head == nullptr) {
 
@@ -56,10 +56,10 @@ void LinkedList<T>::addFront(T data) {
 	this->_size++;
 }
 
-template <class T>
-void LinkedList<T>::addBack(T data) {
+template <class Type>
+void LinkedList<Type>::addBack(const Type& data) {
 
-	Node<T>* newNode = new Node<T>(data);
+	Node<Type>* newNode = new Node<Type>(data);
 
 	if (_tail == nullptr) {
 
@@ -77,14 +77,14 @@ void LinkedList<T>::addBack(T data) {
 	this->_size++;
 }
 
-template <class T>
-T LinkedList<T>::popFront(void) {
+template <class Type>
+Type LinkedList<Type>::popFront(void) {
 
 	if (_head != nullptr) {
 
-		T data = _head->data;
+		Type data = _head->data;
 
-		Node<T>* oldHead = _head;
+		Node<Type>* oldHead = _head;
 		_head = _head->next;
 		delete oldHead;
 
@@ -96,16 +96,16 @@ T LinkedList<T>::popFront(void) {
 	throw std::logic_error("Cannot pop value from empty list");
 }
 
-template <class T>
-T LinkedList<T>::popBack(void) {
+template <class Type>
+Type LinkedList<Type>::popBack(void) {
 
 	if (_tail != nullptr) {
 
-		T data = _tail->data;
+		Type data = _tail->data;
 
-		Node<T>* oldTail = _tail;
+		Node<Type>* oldTypeail = _tail;
 		_tail = _tail->prev;
-		delete oldTail;
+		delete oldTypeail;
 
 		this->_size--;
 
@@ -115,8 +115,8 @@ T LinkedList<T>::popBack(void) {
 	throw std::logic_error("Cannot pop value from empty list");
 }
 
-template <class T>
-int LinkedList<T>::getSize(void) {
+template <class Type>
+int LinkedList<Type>::getSize(void) {
 
 	return this->_size;
 }
