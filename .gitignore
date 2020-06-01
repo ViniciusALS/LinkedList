@@ -1,4 +1,4 @@
 
 # Excludes the folder with the compiled project
-./build
+build/
 
