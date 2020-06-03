@@ -2,3 +2,7 @@
 # Excludes the folder with the compiled project
 build/
 
+# Excludes files created by Visual Studio
+.vs/
+CMakeSettings.json
+
