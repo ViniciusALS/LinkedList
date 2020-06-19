@@ -12,7 +12,7 @@ project(LinkedList VERSION 1.0.0 LANGUAGES CXX)
 include_directories( ./include ./src )
 
 # target
-add_executable(binary src/main.cpp)
+add_executable(binary test/test.cpp)
 
 # external libs
 
