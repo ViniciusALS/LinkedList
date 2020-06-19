@@ -19,7 +19,7 @@ int main(void) {
 	myList.addFront(9);
 
 	cout << myList.getSize() << endl;
-
+ 
 	int* list = myList.getList();
 	int size = myList.getSize();
 
