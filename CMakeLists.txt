@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project name
-project(LinkedList)
+project(LinkedList VERSION 1.0.0 LANGUAGES CXX)
 
 # flags
 
