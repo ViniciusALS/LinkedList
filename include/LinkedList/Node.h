@@ -1,16 +1,19 @@
 #pragma once
 
-template <class Type>
-class Node {
-public:
+namespace dataStructures {
 
-	Type data;
-	Node<Type>* next;
-	Node<Type>* prev;
+	template <class Type>
+	class Node {
+	public:
 
-	Node(const Type& data) {
-		this->data = data;
-		this->next = nullptr;
-		this->prev = nullptr;
+		Type data;
+		Node<Type>* next;
+		Node<Type>* prev;
+
+		Node(const Type& data):
+			data(data), next(nullptr), prev(nullptr){}
+
+		~Node(){};
 	};
-};
+}
+
